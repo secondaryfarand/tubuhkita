@@ -1,0 +1,208 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #0d0e12;
+  color: #f3f4f6;
+  box-sizing: border-box;
+}
+
+.backButton {
+  align-self: flex-start;
+  margin: 5rem 2rem 0.5rem 11rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: #e2e8f0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);;
+}
+
+.backButton:hover {
+  background: rgba(68, 225, 239, 0.15);
+  border-color: var(--primary);
+  color: #ffffff;
+  transform: translateX(-3px);
+}
+
+.mainLayout {
+  display: grid;
+  grid-template-columns: 320px 1fr 360px;
+  gap: 1.5rem;
+  padding: 1rem 2rem 2rem 2rem;
+  flex: 1;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.sidebar, 
+.infoPanel {
+  background: rgba(18, 18, 20, 0.75);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-sizing: border-box;
+  max-height: calc(100vh - 160px);
+}
+
+.sidebar::-webkit-scrollbar,
+.infoPanel::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.infoPanel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.title {
+  font-family: var(--sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin: 0.75rem 0 0.5rem 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.organSection {
+  margin-top: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.85rem;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.organButton {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.organButton:hover {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ffffff;
+  border-color: rgba(239, 68, 68, 0.5);
+  transform: translateX(4px);
+}
+
+.authorCard {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  color: #64748b;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.authorLink {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.authorLink:hover {
+  color: #f87171;
+  text-decoration: underline;
+}
+
+.wikiTitle {
+  font-family: var(--sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin: 0 0 0.85rem 0;
+  font-weight: 700;
+}
+
+.wikiImg {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wikiText {
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1200px) {
+  .mainLayout {
+    grid-template-columns: 280px 1fr 300px;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .backButton {
+    margin: 1rem 1rem 0.5rem 1rem;
+  }
+
+  .mainLayout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1rem;
+  }
+
+  .sidebar, 
+  .infoPanel {
+    width: 100%;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .viewerContainer {
+    width: 100%;
+    height: 55vh;
+    min-height: 380px;
+    order: -1;
+  }
+
+  .iframe {
+    height: calc(100% + 100px);
+    top: -60px;
+  }
+}

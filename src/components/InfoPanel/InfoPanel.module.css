@@ -1,0 +1,77 @@
+.infoPanel {
+  background: rgba(18, 18, 20, 0.75);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-sizing: border-box;
+  max-height: calc(100vh - 160px);
+  color: rgb(243, 244, 246);
+}
+
+.infoPanel::-webkit-scrollbar {
+  width: 5px;
+}
+
+.infoPanel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.sectionTitle {
+  font-size: 12px;
+  color: rgb(203, 213, 225);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 14px 0;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 6px;
+  font-weight: 700;
+}
+
+.statusText,
+.placeholderText {
+  font-size: 13.5px;
+  color: rgb(148, 163, 184);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.wikiTitle {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  margin: 0 0 14px 0;
+  font-weight: 700;
+}
+
+.wikiImg {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wikiText {
+  color: rgb(203, 213, 225);
+  line-height: 1.6;
+  font-size: 13.5px;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .infoPanel {
+    width: 100%;
+    max-height: none;
+    overflow-y: visible;
+  }
+}

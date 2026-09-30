@@ -1,0 +1,42 @@
+.viewerContainer {
+  position: relative;
+  background: #121212;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  min-height: 500px;
+}
+
+.iframeWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.iframe {
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 90px);
+  top: -45px;
+  left: 0;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .viewerContainer {
+    width: 100%;
+    height: 65vh; 
+    min-height: 400px;
+    order: -1; 
+  }
+  .iframe {
+    height: calc(100% + 120px);
+    top: -60px;
+  }
+
+
+}

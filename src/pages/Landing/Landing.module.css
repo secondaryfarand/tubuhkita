@@ -1,0 +1,338 @@
+.pageWrapper {
+  background-color: #ffffff;
+  color: #0f172a;
+  min-height: 100vh;
+  margin-top: 6rem;
+}
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.sectionHeader:first-child {
+  margin-top: 6rem;
+  margin-bottom: 0;
+}
+.sectionHeader {
+  margin-bottom: 2rem;
+}
+
+
+.sectionHeader h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.sectionHeader p {
+  color: #64748b;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.latarSplitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 3rem;
+  align-items: center;       
+  margin-top: 2rem;     
+}
+.textContent p {
+  color: #475569;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  text-align: justify;
+}
+.textContent h3 {
+  padding-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.textContent p:last-child {
+  margin-bottom: 0;
+}
+.latarImageWrapper {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  transition: box-shadow 0.2s ease;
+}
+.latarLandscapeImage {
+  width: 100%;
+  height: 100%;
+  max-height: 380px;      
+  object-fit: cover;      
+  display: block;
+  transition: transform 0.4s ease;
+}
+.latarImageWrapper:hover {
+  box-shadow: none;
+}
+.latarImageWrapper:hover .latarLandscapeImage {
+  transform: scale(1.03);
+}
+
+.fiturItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 3rem;
+  align-items: center;       
+  margin: 0rem 0 15rem;     
+}
+.fiturItem:nth-last-child(1) {      
+  margin: 15rem 0 0rem;
+}
+.fiturItem:nth-child(even) .fiturAngkaWrapper {
+  right: 0;
+  left: none;
+  transform: translateX(10rem);
+}
+.fiturItem:nth-child(odd) .fiturAngkaWrapper {
+  right: none;
+  left: 0;
+  transform: translateX(-10rem);
+}
+.fiturAngkaWrapper {
+  height: 12rem;
+  display: flex;
+  justify-content: right;
+  align-items: center; 
+  overflow: hidden;  
+  position: absolute;
+  left: 0;
+  margin: 0 0;
+  transform: translateY(-2rem);
+  
+}
+.fiturAngka {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  right: 0;
+  font-weight: 900;
+  font-size: 14rem;
+  color: rgba(162, 161, 161, 0.429);
+  z-index: 0;
+}
+
+.badgePill {
+  align-self: flex-start;
+  background: var(--accent-blue);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.cardImageMock {
+  margin-top: 1.5rem;
+  height: 140px;
+  background: #cbd5e1;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  font-weight: 600;
+}
+
+.stepGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stepCard {
+  position: relative;
+  background: linear-gradient(135deg, #4f5153 0%, #09090b 100%);
+  border-radius: 28px;
+  padding: 3rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-height: 80px;
+  overflow: visible; 
+}
+
+.stepCardActive {
+  background: linear-gradient(135deg, var(--primary) 0%, #09090b 100%);
+  color: #ffffff;
+  align-items: flex-start;
+  text-align: left;
+  padding: 3rem 2.5rem;
+  justify-content: flex-end; 
+}
+
+.activeCardContent {
+  width: 100%;
+}
+
+.stepCard h3 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.stepCard p {
+  color: #fbfbff;
+  margin-bottom: 2rem;
+}
+
+/* Tombol Oranye Pill di Dark Card */
+.stepBtn {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 0.85rem 2rem !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.stepBtn:hover {
+  background-color: var(--primary) !important;
+}
+.viewer3DWrapper {
+  width: 100%;
+  height: 340px;
+  min-height: 340px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 2px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.viewer3DWrapper:hover {
+  border-color: #0284c7; 
+  box-shadow: 0 12px 30px -5px rgba(2, 132, 199, 0.3), 0 0 15px rgba(2, 132, 199, 0.2);
+  transform: translateY(-2px); 
+}
+
+.iframe3D {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: calc(100% + 90px);
+  top: -45px;
+}
+
+.viewerOverlayHint {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none; 
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.viewerLoading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 0.75rem;
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  user-select: none;
+}
+
+@media (max-width: 868px) {
+  .pageWrapper:nth-child(1) {
+    margin-top: 0.5rem;
+  }
+  .section {
+    padding: 2rem 1.5rem;
+  }
+  .sectionHeader:nth-child(1) {
+    margin-top: 0rem;
+  }
+  .sectionHeader h2 {
+    line-height: 110%;
+  }
+  .latarSplitGrid {
+    margin-top: 0;
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+  }
+  .latarLandscapeImage {
+    max-height: 260px;
+  }
+  
+  .fiturItem {
+    margin: 10rem 0;
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+  }
+  .fiturItem:nth-last-child(1) {      
+    margin: 10rem 0 0rem;
+  }
+  .fiturAngkaWrapper {
+    height: 10rem;
+  }
+  .fiturAngkaWrapper:nth-child(even) {
+    transform: translateY(0);
+  }
+  .fiturItem:nth-child(odd) .fiturAngkaWrapper {
+    transform: translateX(0);
+    transform: translateY(-29rem);
+  }
+  .fiturItem:nth-child(even) .fiturAngkaWrapper {
+    transform: translateX(0);
+    transform: translateY(-19rem);
+  }
+  /* .fiturItem:nth-last-child(1) .fiturAngkaWrapper {
+    transform: translateX(0);
+    transform: translateY(-25rem);
+  } */
+  .fiturAngka {
+    font-size: 10rem;
+  }
+
+  .bentoGrid, .stepGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .viewer3DWrapper {
+    height: 300px;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .fiturItem:nth-last-child(1) .fiturAngkaWrapper {
+    transform: translateY(-25rem);
+  }
+}

@@ -1,0 +1,232 @@
+.heroSection {
+  padding: 3rem 1.5rem 2rem;
+  width: 90%;
+  margin:  7rem auto 0;
+}
+
+.logo {
+  display: none;
+}
+
+.mainTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  z-index: 2;
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #a1a1aa 0%, #27272c 55%, #b1b1b9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f8fafc;
+  padding: 0.75rem 1.25rem;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -8px;
+  border: 2px solid #ffffff;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.stars {
+  color: #ff6b00;
+  font-size: 0.85rem;
+}
+
+.ratingText span {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.heroCard {
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.headingBox {
+  z-index: 30;
+}
+
+.darkBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.61); 
+  z-index: 2;
+}
+.bgVideo {
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 30%;
+  height: 100%;
+  object-fit: contain; 
+  z-index: 1;
+  -webkit-user-select: none; 
+  -moz-user-select: none;    
+  -ms-user-select: none;     
+  user-select: none;         
+}
+
+.videoDarkOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0); 
+  z-index: 0;
+}
+
+.cardOverlay {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  z-index: 2;
+}
+
+.tagGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.cardText {
+  max-width: 380px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.cardText p {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+
+@media (max-width: 868px) {
+  .container {
+    margin-top: 0;
+    padding-top: 0;
+  } 
+  .heroSection {
+    padding: 0rem 1rem 2rem;
+    width: 90%;
+    margin:  0;
+  }
+
+
+
+  .bgVideo {
+    object-fit: cover;
+    left: 0;
+    width: 100%;
+  }
+  .videoDarkOverlay {
+    display: none;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .heroCard {
+    height: 90vh;
+    gap: 18%;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #0f172a;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .logoText {
+    color: var(--primary);
+  }
+  .logoBadge {
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+
+  .gradientText {
+    background: linear-gradient(90deg, #e8e8ea 0%, #4c4c53 55%, #b1b1b9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+
+  .cardOverlay {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .cardText {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .bgVideo {
+    left: 0;
+  }
+}
