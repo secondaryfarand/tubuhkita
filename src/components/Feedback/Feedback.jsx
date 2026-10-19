@@ -9,7 +9,7 @@ export default function Feedback() {
     <section className={styles.feedbackSection}>
       <div className={styles.sectionHeader}>
         <h2>Apa Kata Mereka?</h2>
-        <p>Pengalaman langsung dari siswa dan pengajar yang menggunakan AnatoMed.</p>
+        <p>Pengalaman langsung dari siswa dan pengajar yang menggunakan TubuhKita.</p>
       </div>
 
       <div className={styles.marqueeContainer}>

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Menu from './components/Menu/Menu';
+import Menu from './pages/Menu/Menu';
 import AnatomiOrgan from './components/AnatomiOrgan/AnatomiOrgan';
 import Landing from './pages/Landing/Landing';
 import Kuis from './pages/Kuis/Kuis';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ModuleStudy from './pages/ModuleStudy/ModuleStudy';
+import AR from './pages/Augmented/Augmented';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/modul" element={<ModuleStudy />} />
       <Route path="/modul/:moduleId" element={<ModuleStudy />} />
+      <Route path="/ar" element={<AR />} />
     </Routes>
   );
 }

@@ -11,7 +11,8 @@ export const ORGAN_LIST = [
     views: '3.7k',
     comments: 0,
     likes: 13,
-    thumbnail: '/assets/human_anatomy.jpg', 
+    thumbnail: '/assets/human_anatomy-compresso.webp', 
+    videoUrl: "/assets/menuvideo/organ1.mp4",
     //sumber : https://unsplash.com/id/foto/sosok-anatomi-manusia-di-bawah-langit-langit-kayu-putih-F4cJtI7HCMw
     wikiQuery: 'Jaringan_otot', //sumber : wikipedia/jaringan_otot
     sketchfabId: 'e8239f94d87b4e278f0cf02dbad1a330', //sumber : https://sketchfab.com/3d-models/ecorche-anatomy-study-e8239f94d87b4e278f0cf02dbad1a330
@@ -65,7 +66,8 @@ export const ORGAN_LIST = [
     views: '12k',
     comments: 25,
     likes: 122,
-    thumbnail: 'assets/organ_mata.jpg', // sumber : https://unsplash.com/id/foto/bola-mata-kuning-dan-abu-abu-KJCyvlA_aAQ
+    thumbnail: 'assets/organ_mata-compresso.webp', // sumber : https://unsplash.com/id/foto/bola-mata-kuning-dan-abu-abu-KJCyvlA_aAQ
+    videoUrl: "/assets/menuvideo/organ_mata.mp4", // sumber : https://www.youtube.com/shorts/ROd1T-rxRDY
     wikiQuery: 'Mata',
     // sumber: Web wikipedia/Mata
     sketchfabId: '1a23ab8f624e40a9a461d984f312b609',
@@ -174,7 +176,7 @@ export const ORGAN_LIST = [
     views: '1.7k',
     comments: 1,
     likes: 31,
-    thumbnail: '/assets/organ_jantung.jpg',
+    thumbnail: '/assets/organ_jantung-compresso.webp',
     // sumber gambar : https://unsplash.com/id/foto/model-jantung-anatomi-di-atas-stand-Us3AQvyOP-o
     wikiQuery: 'Jantung', //sumner wikipedia jantung
     sketchfabId: '8634c4334f4d4059a2c89e8eafef5bc8', // sumber: https://sketchfab.com/3d-models/300051-human-heart-model-section-8634c4334f4d4059a2c89e8eafef5bc8
@@ -252,7 +254,7 @@ export const ORGAN_LIST = [
     views: '720',
     comments: 0,
     likes: 31,
-    thumbnail: '/assets/organ_liver.jpg', // sumber : https://unsplash.com/id/foto/gambar-kepala-dan-leher-manusia-_TmpQnqS2ng
+    thumbnail: '/assets/organ_liver-compresso.webp', // sumber : https://unsplash.com/id/foto/gambar-kepala-dan-leher-manusia-_TmpQnqS2ng
     wikiQuery: 'Hati', //sumber wikipedia / hati
     sketchfabId: '7717eb7ee9cf466fb30f1cd134562c50', // sumber : https://sketchfab.com/3d-models/anatomy-of-human-liver-exploding-view-7717eb7ee9cf466fb30f1cd134562c50
     defaultCamera: {
@@ -270,7 +272,7 @@ export const ORGAN_LIST = [
     views: '18k',
     comments: 23,
     likes: 101,
-    thumbnail: 'assets/organ_otak.jpg', //sumber : https://unsplash.com/id/foto/close-up-otak-manusia-dengan-latar-belakang-hitam-ii6BOPjAtVY
+    thumbnail: 'assets/organ_otak-compresso.webp', //sumber : https://unsplash.com/id/foto/close-up-otak-manusia-dengan-latar-belakang-hitam-ii6BOPjAtVY
     wikiQuery: 'Otak', //sumber : wikipedia/otak
     sketchfabId: '6ccfbaaf1ac84a119fc249cf004f2e49', //sumber 3d : https://sketchfab.com/3d-models/human-brain-1-annotated-for-addiction-education-6ccfbaaf1ac84a119fc249cf004f2e49
     defaultCamera: {
@@ -357,7 +359,7 @@ export const ORGAN_LIST = [
     views: '28k',
     comments: 89,
     likes: 521,
-    thumbnail: 'assets/organ_ginjal.jpg', //sumber : https://unsplash.com/id/foto/peralatan-belajar-organ-manusia-coklat-igwG8aIaypo
+    thumbnail: 'assets/organ_ginjal-compresso.webp', //sumber : https://unsplash.com/id/foto/peralatan-belajar-organ-manusia-coklat-igwG8aIaypo
     wikiQuery: 'Ginjal', 
     // sumber: Web Wikipedia Ginjal
     sketchfabId: 'd8c0652ddff4474585ccba155c490622', 
@@ -406,7 +408,7 @@ export const ORGAN_LIST = [
     views: '8k',
     comments: 298,
     likes: 231,
-    thumbnail: 'assets/organ_paru.jpg', //sumber : https://unsplash.com/id/foto/fotografi-fokus-selektif-paru-paru-anatomi-Pw9aFhc92P8
+    thumbnail: 'assets/organ_paru-compresso.webp', //sumber : https://unsplash.com/id/foto/fotografi-fokus-selektif-paru-paru-anatomi-Pw9aFhc92P8
     wikiQuery: 'Paru-paru',
     // sumber: Web Wikipedia paru-paru
     sketchfabId: 'c3f91521c53b43458afd509ea6ae2617',
@@ -475,7 +477,7 @@ export const ORGAN_LIST = [
     views: '3.7k',
     comments: 21,
     likes: 1,
-    thumbnail: 'assets/organ_tangan.jpg', //sumber : https://unsplash.com/id/foto/gambar-anatomi-otot-dan-tendon-tangan-manusia-kZu3CXxZUPE
+    thumbnail: 'assets/organ_tangan-compresso.webp', //sumber : https://unsplash.com/id/foto/gambar-anatomi-otot-dan-tendon-tangan-manusia-kZu3CXxZUPE
     wikiQuery: 'Tangan', //sumber: website wikipedia id api tentang tangan
     sketchfabId: '7cecfd9fb2214b59bcb3faa9730ee6a6',
     // sumber:https://sketchfab.com/3d-models/dynamic-human-hand-anatomy-hand-anatomy-7cecfd9fb2214b59bcb3faa9730ee6a6
@@ -523,7 +525,7 @@ export const ORGAN_LIST = [
     views: '26.3k',
     comments: 0,
     likes: 28,
-    thumbnail: '/assets/organ_pankreas.jpeg', //sumber: https://media.sketchfab.com/models/8acf64dc315b49308b4fcbd47e48b92b/thumbnails/96b582adf4704f2c9df8235bbc05167b/aeb692d32afe48cd8f292bce8f39dd17.jpeg
+    thumbnail: '/assets/organ_pankreas-compresso.webp', //sumber: https://media.sketchfab.com/models/8acf64dc315b49308b4fcbd47e48b92b/thumbnails/96b582adf4704f2c9df8235bbc05167b/aeb692d32afe48cd8f292bce8f39dd17.jpeg
     wikiQuery: 'Pankreas', //sumber materi: wikipedia pankreas
     sketchfabId: '8acf64dc315b49308b4fcbd47e48b92b', // sumber : https://sketchfab.com/3d-models/pancreas-cross-section-anatomy-8acf64dc315b49308b4fcbd47e48b92b
     defaultCamera: DEFAULT_CAMERA,
@@ -537,7 +539,7 @@ export const ORGAN_LIST = [
     views: '14.2k',
     comments: 3,
     likes: 17,
-    thumbnail: 'assets/organ_lidah.jpg', //sumber gamber : https://unsplash.com/id/foto/kue-berbentuk-hati-merah-muda-dan-putih-gt9bbQH0uGY
+    thumbnail: 'assets/organ_lidah-compresso.webp', //sumber gamber : https://unsplash.com/id/foto/kue-berbentuk-hati-merah-muda-dan-putih-gt9bbQH0uGY
     wikiQuery: 'Lidah', // sumber : wikipedia halaman Lidah
     sketchfabId: 'afa408912123471fb1c0e999a9c0e27a', // sumber : https://sketchfab.com/3d-models/tongue-anatomy-dorsum-of-tongue-afa408912123471fb1c0e999a9c0e27a
     defaultCamera: DEFAULT_CAMERA,

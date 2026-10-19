@@ -5,7 +5,7 @@ export const FEEDBACK_DATA = [
     age: 17,
     school: 'SMA Negeri 1 Jakarta',
     role: 'Siswa SMA',
-    comment: 'Dulu susah banget bayangin struktur jantung cuma dari buku teks. Pas nyoba 3D di AnatoMed, langsung paham posisi tiap katupnya!',
+    comment: 'Dulu susah banget bayangin struktur jantung cuma dari buku teks. Pas nyoba 3D di TubuhKita, langsung paham posisi tiap katupnya!',
     rating: 5,
   },
   {
