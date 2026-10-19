@@ -14,7 +14,17 @@ function MarkerAR() {
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
         <a-entity mindar-image-target="targetIndex: 0">
-          <a-box position="0 0.4 0" depth="0.1" height="0.1" width="0.1" color="teal"></a-box>
+          {/* <a-box position="0 0.4 0" depth="0.1" height="0.1" width="0.1" color="teal"></a-box> */}
+            <a-entity mindar-image-target="targetIndex: 0">
+                {/* Ganti a-box dengan model 3D .glb lokal Anda */}
+                <a-entity 
+                // src="/models/glb/male_body.glb
+                    gltf-model="/models/glb/male_body.glb" 
+                    scale="0.5 0.5 0.5" 
+                    position="0 0 0" 
+                    rotation="0 45 0"
+                ></a-entity>
+            </a-entity>
         </a-entity>
       </a-scene>
     </div>
