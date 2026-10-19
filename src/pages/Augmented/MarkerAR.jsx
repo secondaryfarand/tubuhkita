@@ -26,7 +26,7 @@ function MarkerAR() {
             gltf-model="/models/glb/male_body.glb" 
             scale="0.1 0.1 0.1" 
             position="0 0 0" 
-            rotation="0 0 0">
+            rotation="90 0 0">
           </a-entity>
         </a-entity>
       </a-scene>
