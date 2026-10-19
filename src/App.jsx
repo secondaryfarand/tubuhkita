@@ -7,6 +7,7 @@ import Kuis from './pages/Kuis/Kuis';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ModuleStudy from './pages/ModuleStudy/ModuleStudy';
 import AR from './pages/Augmented/Augmented';
+import MarkerAR from './pages/Augmented/MarkerAR';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/modul" element={<ModuleStudy />} />
       <Route path="/modul/:moduleId" element={<ModuleStudy />} />
       <Route path="/ar" element={<AR />} />
+      <Route path="/markerar" element={<MarkerAR />} />
     </Routes>
   );
 }
