@@ -8,7 +8,8 @@ function Augmented() {
       {/* Model-viewer native */}
       <model-viewer
         src="/models/glb/male_body.glb" /* Ganti dengan path file .glb lokal Anda */
-        ios-src="/models/organ.usdz" /* Opsional untuk iPhone */
+        ios-src="/models/glb/male_body.usdz" /* Opsional untuk iPhone */
+        // ios-src="/models/organ.usdz" /* Opsional untuk iPhone */
         alt="Model 3D Organ Tubuh"
         ar
         ar-modes="webxr scene-viewer quick-look"
