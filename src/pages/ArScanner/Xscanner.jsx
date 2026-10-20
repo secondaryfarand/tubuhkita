@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
-import styles from './XScanner.module.css';
+import styles from './Xscanner.module.css';
 
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
