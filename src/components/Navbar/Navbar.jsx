@@ -77,6 +77,17 @@ export default function Navbar({ onNavigateDashboard }) {
           </li>
           <li className={styles.navItem}>
             <NavLink 
+              to="/augmented/male-body" 
+              className={({ isActive }) => 
+                `${styles.navLink} ${isActive ? styles.active : ''}`
+              }
+            >
+              <span className={styles.mobileIcon}><i className="icon fa-solid fa-layer-group"></i></span>
+              <span className={styles.navText}>AR</span>
+            </NavLink>
+          </li>
+          <li className={styles.navItem}>
+            <NavLink 
               to="/dashboard" 
               className={({ isActive }) => 
                 `${styles.navLink} ${isActive ? styles.active : ''}`

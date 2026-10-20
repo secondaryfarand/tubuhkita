@@ -1,17 +1,22 @@
 .sidebar {
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
+  min-width: 280px;
   background-color: rgb(18, 18, 20);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* Ubah dari space-between ke flex-start agar list naik ke atas dan tidak ada space kosong di tengah */
+  justify-content: flex-start; 
+  gap: 1.5rem; /* Memberikan jarak yang konsisten antar section */
   box-sizing: border-box;
   color: rgb(243, 244, 246);
   z-index: 10;
-}
+  position: sticky;
+  top: 95px; /* Membuat sidebar ikut terscroll pas di bawah navbar */
+} 
 
 .mobileToggle {
   display: none;
@@ -86,7 +91,7 @@
 }
 
 .authorCard {
-  margin-top: 16px;
+  margin-top: auto; /* Mendorong card author secara otomatis ke bagian paling bawah sidebar jika masih ada sisa ruang */
   font-size: 11px;
   color: rgb(100, 116, 139);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -110,23 +115,35 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    bottom: 80px;
-    left: 16px;
+    bottom: 15px; /* Awalnya lebih rendah/dekat ke bawah */
+    left: 20px;
     z-index: 100;
-    padding: 10px 18px;
-    background-color: var(--primary);
-    color: rgb(255, 255, 255);
+    padding: 12px 22px;
+    background-color: var(--primary, #38bdf8);
+    color: #ffffff;
     border: none;
     border-radius: 30px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-    transition: transform 0.2s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    /* Transisi halus saat posisi bottom berubah */
+    transition: transform 0.3s ease, bottom 0.3s ease, background-color 0.2s ease;
+  }
+
+  /* Ketika di-scroll, dia naik sedikit */
+  .mobileToggle.scrolled {
+    bottom: 70px; 
+    transform: scale(0.95);
+  }
+
+  .mobileToggle:hover {
+    transform: scale(1.05);
+    color: #ffffff;
   }
 
   .mobileToggle:active {
-    transform: scale(0.95);
+    transform: scale(0.90);
   }
 
   .backdrop {

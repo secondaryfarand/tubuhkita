@@ -18,6 +18,7 @@ export default function Footer() {
               <li><Link to="/mmodul">Modul</Link></li>
               <li><Link to="/anatomi">Anatomi</Link></li>
               <li><Link to="/kuis">Kuis</Link></li>
+              <li><Link to="/augmented">AR</Link></li>
               <li><Link to="/dashboard">Dashboard</Link></li>
             </ul>
           </div>

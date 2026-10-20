@@ -1,8 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Sidebar.module.css';
 
 export default function Sidebar({ activeOrgan, onSelectPart }) {
   const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      };
+  
+      handleScroll();
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+  
 
   if (!activeOrgan) return null;
   const parts = activeOrgan.parts || [];
@@ -10,7 +27,7 @@ export default function Sidebar({ activeOrgan, onSelectPart }) {
   return (
     <>
       <button 
-        className={styles.mobileToggle} 
+        className={`${styles.mobileToggle} ${isScrolled ? styles.scrolled : ''}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle Menu Anatomi"
       >

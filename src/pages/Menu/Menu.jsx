@@ -5,8 +5,10 @@ import gsap from 'gsap';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import MenuCard from '../../components/MenuCard/MenuCard'; 
+import SidebarMenu from '../../components/SidebarMenu/SidebarMenu'; 
 
 import { ORGAN_LIST } from '../../data/organData';
+import { AUGMENTED_OBJECT_LIST } from '../../data/augmentedData'; 
 import styles from './Menu.module.css';
 
 export default function Menu() {
@@ -46,10 +48,25 @@ export default function Menu() {
   const handleCardClick = (organId) => {
     navigate(`/anatomi/${organId}`);
   };
+  const handleSelectOrgan = (organId) => {
+    navigate(`/anatomi/${organId}`);
+  };
+
+  const handleSelectAugmented = (augmentedId) => {
+    navigate(`/augmented/${augmentedId}`);
+  };
+
+
 
   return (
     <div className={styles.pageWrapper}>
       <Navbar />
+      <SidebarMenu 
+        organList={ORGAN_LIST} 
+        augmentedList={AUGMENTED_OBJECT_LIST}
+        onSelectOrgan={handleSelectOrgan}
+        onSelectAugmented={handleSelectAugmented}
+      />
 
       <main className={styles.mainContent}>
         <header ref={headerRef} className={styles.headerSection}>
