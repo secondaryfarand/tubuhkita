@@ -9,7 +9,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import ModuleStudy from './pages/ModuleStudy/ModuleStudy';
 import AR from './pages/Augmented/Augmented';
 import MarkerAR from './pages/Augmented/MarkerAR';
-import ArScanner from './pages/ARScanner/ARScanner';
+import ArScanner from './pages/ArScanner/ArScanner';
 import Xscanner from './pages/ArScanner/Xscanner';
 
 function App() {
