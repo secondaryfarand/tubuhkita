@@ -89,6 +89,7 @@
 }
 
 .arButton {
+  display: none;
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -159,5 +160,8 @@
     .modelViewer {
         max-width: 100%;
         height: 380px;
+    }
+    .arButton {
+      display: block;
     }
 }
