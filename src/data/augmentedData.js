@@ -52,7 +52,7 @@ export const AUGMENTED_OBJECT_LIST = [
     name: 'Jantung Manusia',
     modelGlb: '/models/glb/human_heart.glb',
     modelUsdz: '/models/glb/human_heart.usdz',
-    qr: '/assets/qr_augmented/jantung.png',
+    qr: '/assets/qr_augmented/human_heart.png',
     description: 'Model 3D organ jantung untuk simulasi pemindaian AR.',
   },
   {
