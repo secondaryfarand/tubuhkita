@@ -175,29 +175,40 @@ export default function Landing({ onGoToDashboard }) {
       <section id="eksplorasi" className={styles.section}>
         <div className={styles.sectionHeader}>
           <h2>Tips Memulai dalam 3 Langkah</h2>
+          <p className={styles.sectionSubtitle}>Ikuti panduan singkat ini untuk memaksimalkan pengalaman belajarmu.</p>
         </div>
 
         <div className={styles.stepGrid}>
           <div className={styles.stepCard}>
+            <div className={styles.stepNumber}>01</div>
             <div className={styles.activeCardContent}>
               <h3>Baca Materi</h3>
-              <p>Dapatkan akses ke belasan modul belajar yang menarik.</p>
+              <p>Dapatkan akses ke belasan modul belajar yang menarik dan mendalam.</p>
             </div>
+            <div className={styles.cardAccent}></div>
           </div>
+
           <div className={styles.stepCard}>
+            <div className={styles.stepNumber}>02</div>
             <div className={styles.activeCardContent}>
               <h3>Eksplorasi Nyata</h3>
-              <p>Pahami Lebih Lanjut Dengan Visualisasi Tiga Dimensi</p>
+              <p>Pahami lebih lanjut dengan visualisasi tiga dimensi dan Augmented Reality.</p>
             </div>
+            <div className={styles.cardAccent}></div>
           </div>
+
           <div className={`${styles.stepCard} ${styles.stepCardActive}`}>
+            <div className={styles.stepNumber}>03</div>
             <div className={styles.activeCardContent}>
               <h3>Kerjakan Kuis</h3>
               <p>Evaluasi pemahamanmu dan dapatkan skor secara langsung.</p>
-              <Button variant="primary" onClick={onGoToDashboard} className={styles.stepBtn}>
-                <a className={styles.arrAnchor} href="kuis">Coba Kuis ↗</a>
-              </Button>
+              <div className={styles.btnWrapper}>
+                <Button variant="primary" onClick={onGoToDashboard} className={styles.stepBtn}>
+                  <a className={styles.arrAnchor} href="kuis">Coba Kuis ↗</a>
+                </Button>
+              </div>
             </div>
+            <div className={styles.cardAccent}></div>
           </div>
         </div>
       </section>

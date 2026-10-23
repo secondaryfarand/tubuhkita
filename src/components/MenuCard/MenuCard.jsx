@@ -7,18 +7,18 @@ export default function MenuCard({ organ, onCardClick }) {
   const videoRef = useRef(null);
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play().catch(() => {});
-    }
+    // setIsHovered(true);
+    // if (videoRef.current) {
+    //   videoRef.current.currentTime = 0;
+    //   videoRef.current.play().catch(() => {});
+    // }
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
+    // setIsHovered(false);
+    // if (videoRef.current) {
+    //   videoRef.current.pause();
+    // }
   };
 
   return (
