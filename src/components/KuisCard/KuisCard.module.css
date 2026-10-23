@@ -52,7 +52,7 @@
 }
 
 .card:hover:not(.lockedCard) .cardTitle {
-  color: #242424 !important;
+  color: #242424;
 }
 
 .card:hover:not(.lockedCard) .statItem {
@@ -60,7 +60,7 @@
 }
 
 .card:hover:not(.lockedCard) .statItem i {
-  color: #242424 !important;
+  color: #242424;
 }
 
 .card:hover:not(.lockedCard) .statusIcon.unlocked {
@@ -110,7 +110,7 @@
 }
 
 .card:hover:not(.lockedCard) .cardTitle {
-  color: var(--primary, #38bdf8);
+  /* color: var(--primary, #38bdf8); */
 }
 
 .statusIcon {
@@ -157,7 +157,7 @@
 }
 
 .card:hover:not(.lockedCard) .statItem i {
-  color: var(--primary, #38bdf8);
+  /* color: var(--primary, #38bdf8); */
 }
 
 .lockedMessage {
