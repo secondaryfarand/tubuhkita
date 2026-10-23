@@ -40,7 +40,7 @@ export const AUGMENTED_OBJECT_LIST = [
   //   description: 'Model 3D tengkorak manusia.',
   // },
   {
-    id: 'kerangka-organ',
+    id: 'tengkorak-organ',
     name: 'Kerangka dan Organ',
     modelGlb: '/models/glb/anatomi_tengkorak_organ.glb',
     modelUsdz: '/models/glb/anatomi_tengkorak_organ.usdz',
