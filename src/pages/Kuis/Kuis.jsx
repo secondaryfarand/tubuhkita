@@ -1,13 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useProgress } from '../../hooks/userProgress.js';
+import { getQuestionsByOrgan, getRandomQuestions } from '../../data/quizData';
 import gsap from 'gsap';
+import Button from '../../components/Button/Button';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import { getRandomQuestions } from '../../data/quizData';
 import styles from './Kuis.module.css';
 
 const QUESTION_TIME_LIMIT = 30;
 
 export default function Kuis() {
+  const { organId } = useParams(); 
+  const navigate = useNavigate();
+  const { saveQuizScore } = useProgress(); 
+
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -17,6 +24,7 @@ export default function Kuis() {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [timeLeft, setTimeLeft] = useState(QUESTION_TIME_LIMIT);
   const [isCompleted, setIsCompleted] = useState(false);
+  const [hasSavedScore, setHasSavedScore] = useState(false); 
 
   const headerRef = useRef(null);
   const quizCardRef = useRef(null);
@@ -24,7 +32,9 @@ export default function Kuis() {
   const resultRef = useRef(null);
 
   const startNewQuiz = () => {
-    setQuestions(getRandomQuestions(5));
+    const loadedQuestions = organId ? getQuestionsByOrgan(organId, 5) : getRandomQuestions(5);
+    
+    setQuestions(loadedQuestions);
     setCurrentIndex(0);
     setSelectedOption(null);
     setIsAnswered(false);
@@ -32,12 +42,14 @@ export default function Kuis() {
     setCorrectAnswers(0);
     setTimeLeft(QUESTION_TIME_LIMIT);
     setIsCompleted(false);
+    setHasSavedScore(false);
   };
 
   useEffect(() => {
     startNewQuiz();
-  }, []);
+  }, [organId]);
 
+  // Efek Animasi GSAP
   useEffect(() => {
     if (questions.length > 0) {
       gsap.fromTo(
@@ -70,8 +82,14 @@ export default function Kuis() {
         { opacity: 0, scale: 0.9 },
         { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.5)' }
       );
+
+      if (organId && !hasSavedScore) {
+        const finalPercentage = Math.round((correctAnswers / questions.length) * 100);
+        saveQuizScore(organId, finalPercentage);
+        setHasSavedScore(true);
+      }
     }
-  }, [isCompleted]);
+  }, [isCompleted, organId, correctAnswers, questions.length, hasSavedScore, saveQuizScore]);
 
   useEffect(() => {
     if (isCompleted || isAnswered || questions.length === 0) return;
@@ -100,6 +118,14 @@ export default function Kuis() {
     }
   };
 
+  const handleBack = () => {
+    if (window.history.state && window.history.state.idx > 0) {
+      navigate(-1);
+    } else {
+      navigate('/kuis');
+    }
+  };
+
   const handleNext = () => {
     if (currentIndex + 1 < questions.length) {
       setCurrentIndex((prev) => prev + 1);
@@ -122,11 +148,24 @@ export default function Kuis() {
       <Navbar />
 
       <main className={styles.mainContent}>
+        <div className={styles.backButtonWrapper}>
+          <Button 
+            className={styles.topBarContainerButton} 
+            variant="primary" 
+            onClick={handleBack}
+            title="Kembali"
+          >
+            <i className="fa-solid fa-arrow-left"></i>
+          </Button>
+        </div>
         <header ref={headerRef} className={styles.headerSection}>
-          <h1 className={styles.pageTitle}>Kuis Anatomi</h1>
+          <h1 className={styles.pageTitle}>
+            Kuis Anatomi {organId ? `: ${organId.toUpperCase()}` : ''}
+          </h1>
           <p className={styles.pageSubtitle}>
             Uji pemahaman dan pengetahuan anatomi tubuh manusia Anda melalui kuis interaktif ini.
           </p>
+
         </header>
 
         <section ref={quizCardRef} className={styles.quizCard}>
@@ -189,7 +228,7 @@ export default function Kuis() {
                 <i className="fa-solid fa-trophy"></i>
               </div>
               <h2 className={styles.resultTitle}>Kuis Selesai</h2>
-              <p className={styles.resultSubtitle}>Berikut adalah ringkasan hasil evaluasi Anda:</p>
+              <p className={styles.resultSubtitle}>Progres dan skor Anda telah otomatis tersimpan ke Dashboard!</p>
               
               <div className={styles.resultBoard}>
                 <div className={styles.resultBox}>
@@ -210,10 +249,16 @@ export default function Kuis() {
                 </div>
               </div>
 
-              <button className={styles.restartBtn} onClick={startNewQuiz}>
-                <i className="fa-solid fa-rotate-right"></i>
-                <span>Main Lagi</span>
-              </button>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', justifyContent: 'center' }}>
+                <button className={styles.restartBtn} onClick={startNewQuiz}>
+                  <i className="fa-solid fa-rotate-right"></i>
+                  <span>Ulangi Kuis</span>
+                </button>
+                <button className={styles.restartBtn} onClick={() => navigate('/dashboard')} style={{ background: '#0284c7' }}>
+                  <i className="fa-solid fa-chart-line"></i>
+                  <span>Lihat Dashboard</span>
+                </button>
+              </div>
             </div>
           )}
         </section>

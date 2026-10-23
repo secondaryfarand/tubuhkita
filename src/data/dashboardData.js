@@ -1,8 +1,37 @@
 export const SYSTEM_DATA = [
-  { id: 'peredarandarah', name: 'Peredaran Darah', totalOrgans: 2, completedOrgans: 1 },
-  { id: 'pernapasan', name: 'Pernapasan', totalOrgans: 2, completedOrgans: 0 },
-  { id: 'pencernaan', name: 'Pencernaan', totalOrgans: 2, completedOrgans: 0 },
-  { id: 'rangka', name: 'Rangka', totalOrgans: 2, completedOrgans: 1 },
-  { id: 'saraf', name: 'Saraf', totalOrgans: 2, completedOrgans: 2 },
-  { id: 'ekskresi', name: 'Ekskresi', totalOrgans: 2, completedOrgans: 0 },
+  { 
+    id: 'peredaran-darah', 
+    name: 'Peredaran Darah', 
+    organs: ['jantung', 'pembuluh-darah'], 
+  },
+  { 
+    id: 'pernapasan', 
+    name: 'Pernapasan', 
+    organs: ['paru_paru', 'trakea'], 
+  },
+  { 
+    id: 'pencernaan', 
+    name: 'Pencernaan', 
+    organs: ['lambung', 'usus', 'pankreas'], 
+  },
+  { 
+    id: 'rangka', 
+    name: 'Rangka', 
+    organs: ['tengkorak', 'tulang-belakang', 'tulang_tangan'], 
+  },
+  { 
+    id: 'saraf', 
+    name: 'Saraf', 
+    organs: ['otak', 'sumsum-tulang'], 
+  },
+  { 
+    id: 'ekskresi', 
+    name: 'Ekskresi', 
+    organs: ['ginjal', 'liver'], 
+  },
+  { 
+    id: 'lainnya', 
+    name: 'Lainnya', 
+    organs: ['anatomi-tubuh-manusia', 'mata', 'lidah'], 
+  },
 ];

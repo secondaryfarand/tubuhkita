@@ -13,27 +13,20 @@
   box-sizing: border-box;
 }
 
-.backButton {
-  align-self: flex-start;
-  margin: 5rem 2rem 0.5rem 11rem;
-  padding: 0.6rem 1.2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50px;
-  color: #e2e8f0;
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  backdrop-filter: blur(8px);;
+.topBarContainer {
+  margin: 5rem auto 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.topBarContainerButton {
+    padding: 0.5rem 1.5rem;
 }
 
-.backButton:hover {
-  background: rgba(68, 225, 239, 0.15);
-  border-color: var(--primary);
-  color: #ffffff;
-  transform: translateX(-3px);
-}
 
 .mainLayout {
   display: grid;
@@ -177,9 +170,12 @@
 }
 
 @media (max-width: 992px) {
-  .backButton {
-    margin: 1rem 1rem 0.5rem 1rem;
+  .topBarContainer {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding: 0 1rem 0rem 1rem;
   }
+
 
   .mainLayout {
     grid-template-columns: 1fr;

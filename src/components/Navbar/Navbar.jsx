@@ -77,7 +77,7 @@ export default function Navbar({ onNavigateDashboard }) {
           </li>
           <li className={styles.navItem}>
             <NavLink 
-              to="/augmented/male-body" 
+              to="/augmented/tubuh-pria" 
               className={({ isActive }) => 
                 `${styles.navLink} ${isActive ? styles.active : ''}`
               }

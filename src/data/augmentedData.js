@@ -1,10 +1,19 @@
 export const AUGMENTED_OBJECT_LIST = [
   {
-    id: 'male-body',
+    id: 'tubuh-pria',
     name: 'Anatomi Tubuh Pria',
     modelGlb: '/models/glb/male_body.glb',
     modelUsdz: '/models/glb/male_body.usdz',
-    description: 'Model 3D lengkap struktur anatomi tubuh manusia.',
+    qr: '/assets/qr_augmented/tubuh-pria.png',
+    description: 'Model 3D AR lengkap struktur anatomi tubuh manusia.',
+  },
+  {
+    id: 'tengkorak-organ',
+    name: 'Tengkorak dan Organ',
+    modelGlb: '/models/glb/anatomi_tengkorak_organ.glb',
+    modelUsdz: '/models/glb/anatomi_tengkorak_organ.usdz',
+    qr: '/assets/qr_augmented/tengkorak-organ.png',
+    description: 'Model 3D organ tubuh dan struktur tulang pada manusia.',
   },
   {
     id: 'jantung',

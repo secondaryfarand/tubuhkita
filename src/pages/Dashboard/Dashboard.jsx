@@ -16,11 +16,19 @@ export default function Dashboard({ onGoToDashboard }) {
   const { progress, resetProgress } = useProgress();
   const containerRef = useRef(null);
 
-  const totalOrgansLearned = progress.readModules.length;
-  const quizValues = Object.values(progress.quizScores);
-  const avgScore = quizValues.length > 0 
-    ? Math.round(quizValues.reduce((a, b) => a + b, 0) / quizValues.length) 
+  const readModules = progress.readModules || [];
+  const totalOrgansLearned = readModules.length;
+
+  // const totalOrgansLearned = progress.readModules.length;
+  const quizScoresObj = progress.quizScores || {};
+  const quizEntries = Object.entries(quizScoresObj);
+  const totalQuizFinished = quizEntries.length;
+  const avgScore = totalQuizFinished > 0 
+    ? Math.round(quizEntries.reduce((acc, [, score]) => acc + score, 0) / totalQuizFinished) 
     : 0;
+
+  const allSystemOrgans = SYSTEM_DATA.flatMap(sys => sys.organs || []);
+  const totalAllOrgans = allSystemOrgans.length > 0 ? allSystemOrgans.length : 17;
 
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
@@ -69,7 +77,7 @@ export default function Dashboard({ onGoToDashboard }) {
           <div className={styles.metricCard}>
             <span className={styles.metricLabel}>Organ Dipelajari</span>
             <div className={styles.metricValue}>
-              {totalOrgansLearned}<span className={styles.metricTotal}>/17</span>
+              {totalOrgansLearned}<span className={styles.metricTotal}>/{totalAllOrgans}</span>
             </div>
           </div>
 
@@ -80,7 +88,7 @@ export default function Dashboard({ onGoToDashboard }) {
 
           <div className={styles.metricCard}>
             <span className={styles.metricLabel}>Total Kuis Selesai</span>
-            <div className={styles.metricValue}>{quizValues.length}</div>
+            <div className={styles.metricValue}>{totalQuizFinished}</div>
           </div>
         </div>
 
@@ -88,12 +96,15 @@ export default function Dashboard({ onGoToDashboard }) {
           <h2 className={styles.sectionTitle}>Progres per Sistem Tubuh</h2>
           <div className={styles.systemList}>
             {SYSTEM_DATA.map((sys) => {
-              const percentage = Math.round((sys.completedOrgans / sys.totalOrgans) * 100);
+              const systemOrgans = sys.organs || [];
+              const completedCount = systemOrgans.filter(orgId => readModules.includes(orgId)).length;
+              const totalOrgans = systemOrgans.length > 0 ? systemOrgans.length : 1;
+              const percentage = Math.round((completedCount / totalOrgans) * 100);
               return (
                 <div key={sys.id} className={styles.systemItem}>
                   <div className={styles.systemLabelRow}>
                     <span className={styles.systemName}>
-                      {sys.name} <span className={styles.systemCount}>({sys.completedOrgans}/{sys.totalOrgans} organ)</span>
+                      {sys.name} <span className={styles.systemCount}>({completedCount}/{totalOrgans} organ)</span>
                     </span>
                     <span className={styles.systemPercent}>{percentage}%</span>
                   </div>

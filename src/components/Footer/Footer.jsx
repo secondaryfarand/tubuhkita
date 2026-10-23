@@ -15,11 +15,12 @@ export default function Footer() {
             <span className={styles.sectionLabel}>Navigasi Cepat</span>
             <ul className={styles.linkList}>
               <li><Link to="/">Beranda</Link></li>
-              <li><Link to="/mmodul">Modul</Link></li>
-              <li><Link to="/anatomi">Anatomi</Link></li>
+              <li><Link to="/mmodul">Baca Modul</Link></li>
+              <li><Link to="/anatomi">Model Anatomi</Link></li>
               <li><Link to="/kuis">Kuis</Link></li>
-              <li><Link to="/augmented">AR</Link></li>
+              <li><Link to="/augmented">Augmented Reality</Link></li>
               <li><Link to="/dashboard">Dashboard</Link></li>
+              <li><Link to="/ai-chat">Bantuan AI</Link></li>
             </ul>
           </div>
 

@@ -18,6 +18,40 @@
   align-items: center;
 }
 
+.backButtonWrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 1rem; 
+}
+
+.topBarContainerButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 42px; */
+  /* height: 38px; */
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease;
+}
+
+.topBarContainerButton i {
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.topBarContainerButton:hover {
+  transform: translateX(-3px);
+  box-shadow: 0 4px 15px -4px rgba(56, 189, 248, 0.3);
+}
+
+.topBarContainerButton:hover i {
+  transform: translateX(-2px);
+}
+
 .headerSection {
   text-align: center;
   margin-bottom: 2rem;
@@ -323,6 +357,7 @@
 
   .pageTitle {
     font-size: 1.6rem;
+    justify-content: left;
   }
 
   .qText {

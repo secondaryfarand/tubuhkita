@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { MODULE_DATA } from '../../data/moduleData';
 import { useProgress } from '../../hooks/userProgress';
 import Button from '../../components/Button/Button';
+import AIAssistantButton from '../../components/AIAssistantButton/AIAssistantButton';
 
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
@@ -63,9 +64,9 @@ export default function ModuleStudy({ onGoToQuiz }) {
 
       <div className={styles.pageContainer}>
         <div ref={topBarRef} className={styles.topBar}>
-          <button className={styles.backBtn} onClick={() => navigate(-1)}>
-            ← Kembali
-          </button>
+                  <Button className={styles.topBarContainerButton} variant="primary" onClick={() => navigate(-1)}>
+                      <i class="fa-solid fa-arrow-left"></i>
+                  </Button>
           <span className={styles.breadcrumb}>
             Modul / {currentModule.title}
           </span>
@@ -133,6 +134,13 @@ export default function ModuleStudy({ onGoToQuiz }) {
                 <p>{currentModule.content.clinicalNote}</p>
               </div>
             )}
+            <AIAssistantButton 
+              className={styles.aiBtn}
+                      contextData={{
+                        topic: currentModule?.title,
+                        prompt: `Tolong jelaskan secara ringkas dan mudah dipahami oleh pelajar mengenai struktur dan fungsi dari ${currentModule?.title}.`
+                      }}
+                    />
 
             <div className={styles.actionFooter}>
               {hasBeenRead ? (

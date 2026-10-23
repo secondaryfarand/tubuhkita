@@ -1,0 +1,32 @@
+.aiButton {
+    padding: 0.5rem 1.5rem 0.5rem;
+    /* padding-left: 1rem; */
+    font-size: 0.8rem;
+    background-color: transparent;
+    border: 0px solid rgba(234, 207, 110, 0);
+    transition: 0.2s;
+    color: rgb(186, 148, 11);
+    /* background-color: rgba(26, 26, 26, 0.617); */
+    border-radius: 25px;
+    font-weight: bold;
+    /* width: 10rem; */
+}.aiButton:hover{
+    background-color: rgba(234, 207, 110, 0.236);
+    /* border: 0px solid rgba(234, 207, 110, 0.42); */
+}
+
+
+.aiIcon {
+    color: rgb(186, 148, 11);
+    padding-right: 1rem;
+}
+
+
+
+@media (max-width: 992px) {
+    .aiButton {
+        /* padding-left: 0; */
+        border: 1px solid rgba(234, 207, 110, 0.403);
+        
+    }
+}

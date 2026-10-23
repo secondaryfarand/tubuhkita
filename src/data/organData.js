@@ -6,7 +6,7 @@ export const DEFAULT_CAMERA = {
 
 export const ORGAN_LIST = [
   {
-    id: 'muscle-tissue',
+    id: 'antatomi-tubuh-manusia',
     title: 'Anatomi Tubuh Manusia',
     views: '3.7k',
     comments: 0,

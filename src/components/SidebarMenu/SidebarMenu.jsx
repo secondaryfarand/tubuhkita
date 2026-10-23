@@ -11,10 +11,8 @@ export default function SidebarMenu({
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Deteksi posisi scroll halaman
   useEffect(() => {
     const handleScroll = () => {
-      // Tombol baru akan naik jika halaman digulir lebih dari 30 pixel ke bawah
       if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
@@ -22,7 +20,6 @@ export default function SidebarMenu({
       }
     };
 
-    // Cek posisi scroll saat komponen pertama kali dirender
     handleScroll();
 
     window.addEventListener('scroll', handleScroll);
@@ -31,7 +28,6 @@ export default function SidebarMenu({
 
   return (
     <>
-      {/* Tombol Toggle dengan tambahan kelas 'scrolled' saat halaman digulir */}
       <button 
         className={`${styles.mobileToggle} ${isScrolled ? styles.scrolled : ''}`}
         onClick={() => setIsOpen(!isOpen)}
@@ -98,7 +94,7 @@ export default function SidebarMenu({
         </div>
 
         <div className={styles.authorCard}>
-          AnatoMed Navigation Module
+          TubuhKita
         </div>
       </aside>
     </>

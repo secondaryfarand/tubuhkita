@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styles from './InfoPanel.module.css';
 
-export default function InfoPanel({ query }) {
+import AIAssistantButton from '../AIAssistantButton/AIAssistantButton';
+
+export default function InfoPanel({ query, activeOrgan }) {
   const [wikiData, setWikiData] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -41,6 +43,7 @@ export default function InfoPanel({ query }) {
     fetchWikiData();
   }, [query]);
 
+  const currentTopic = (wikiData && wikiData.title) ? wikiData.title : activeOrgan.title;
   return (
     <section className={styles.infoPanel}>
       <h3 className={styles.sectionTitle}>Eksplorasi Wikipedia</h3>
@@ -62,6 +65,12 @@ export default function InfoPanel({ query }) {
           Silakan klik salah satu target bagian pada menu bar sebelah kiri untuk menampilkan informasi medis.
         </p>
       )}
+      <AIAssistantButton 
+        contextData={{
+          topic: currentTopic,
+          prompt: `Tolong jelaskan secara ringkas dan mudah dipahami oleh pelajar mengenai struktur dan fungsi dari ${currentTopic}.`
+        }}
+              />
     </section>
   );
 }

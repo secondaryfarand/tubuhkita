@@ -29,7 +29,6 @@
   transform: scale(0.90);
 }
 
-/* Backdrop gelap di seluruh layar saat sidebar aktif */
 .backdrop {
   display: block;
   position: fixed;
@@ -39,7 +38,6 @@
   z-index: 90;
 }
 
-/* Sidebar diatur menjadi Fixed Drawer (Tersembunyi di kiri, muncul saat .open) */
 .sidebar {
   position: fixed;
   top: 0;
@@ -135,7 +133,7 @@
   align-items: center;
   justify-content: center;
   position: fixed;
-  bottom: 15px; /* Awalnya lebih rendah/dekat ke bawah */
+  bottom: 15px; 
   left: 20px;
   z-index: 100;
   padding: 12px 22px;
@@ -147,11 +145,10 @@
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-  /* Transisi halus saat posisi bottom berubah */
+
   transition: transform 0.3s ease, bottom 0.3s ease, background-color 0.2s ease;
 }
 
-/* Ketika di-scroll, dia naik sedikit */
 .mobileToggle.scrolled {
   bottom: 70px; 
   transform: scale(0.95);
