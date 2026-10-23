@@ -100,9 +100,9 @@ export default function AugmentedDetail({ onGoToDashboard }) {
               auto-rotate
               className={styles.modelViewer}
             >
-              <button slot="ar-button" className={styles.arButton}>
+              <Button slot="ar-Button" className={styles.arButton}>
                 Munculkan di Ruangan (AR)
-              </button>
+              </ Button>
             </model-viewer>
 
             <div className={styles.qrContainer}>
