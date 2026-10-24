@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import gsap from 'gsap';
 
 import SidebarMenu from '../SidebarMenu/SidebarMenu';
 import Navbar from '../Navbar/Navbar';
@@ -8,20 +7,15 @@ import Footer from '../Footer/Footer';
 import Button from '../Button/Button';
 
 import { ORGAN_LIST } from '../../data/organData';
-import { AUGMENTED_OBJECT_LIST } from '../../data/augmentedData'; 
-import styles from './AugmentedDetail.module.css'; 
+import { AUGMENTED_OBJECT_LIST } from '../../data/augmentedData';
+import styles from './AugmentedDetail.module.css';
 
 export default function AugmentedDetail({ onGoToDashboard }) {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const containerRef = useRef(null);
-  const backBtnRef = useRef(null);
-  const titleRef = useRef(null);
-  const descRef = useRef(null);
-  const viewerWrapperRef = useRef(null);
-
   const activeItem = AUGMENTED_OBJECT_LIST.find((item) => item.id === id) || AUGMENTED_OBJECT_LIST[0];
+  console.log(activeItem);
 
   const handleSelectOrgan = (organId) => {
     navigate(`/anatomi/${organId}`);
@@ -31,39 +25,11 @@ export default function AugmentedDetail({ onGoToDashboard }) {
     navigate(`/augmented/${augmentedId}`);
   };
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-      tl.fromTo(backBtnRef.current, 
-        { opacity: 0, x: -20 }, 
-        { opacity: 1, x: 0, duration: 0.5 }
-      )
-      .fromTo(titleRef.current, 
-        { opacity: 0, y: 20 }, 
-        { opacity: 1, y: 0, duration: 0.5 }, 
-        '-=0.3'
-      )
-      .fromTo(descRef.current, 
-        { opacity: 0, y: 20 }, 
-        { opacity: 1, y: 0, duration: 0.5 }, 
-        '-=0.3'
-      )
-      .fromTo(viewerWrapperRef.current, 
-        { opacity: 0, scale: 0.95, y: 15 }, 
-        { opacity: 1, scale: 1, y: 0, duration: 0.6 }, 
-        '-=0.2'
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, [id]);
-
   return (
-    <div className={styles.container} ref={containerRef}>
+    <div className={styles.container}>
       <Navbar onNavigateDashboard={onGoToDashboard} />
       
-      <div className={styles.bottomActionContainer} ref={backBtnRef}>
+      <div className={styles.bottomActionContainer}>
         <Button 
           variant="primary" 
           onClick={() => navigate('/anatomi')}
@@ -82,14 +48,12 @@ export default function AugmentedDetail({ onGoToDashboard }) {
         />
 
         <div className={styles.viewerSection}>
-          <h2 className={styles.title} ref={titleRef}>
-            {activeItem?.name || 'Simulasi AR'}
-          </h2>
-          <p className={styles.description} ref={descRef}>
+          <h2 className={styles.title}>{activeItem?.name || 'Simulasi AR'}</h2>
+          <p className={styles.description}>
             {activeItem?.description || 'Eksplorasi model dalam bentuk Augmented Reality.'}
           </p>
           
-          <div className={styles.viewerWrapper} ref={viewerWrapperRef}>
+          <div className={styles.viewerWrapper}>
             <model-viewer
               src={activeItem?.modelGlb}
               ios-src={activeItem?.modelUsdz}
@@ -116,7 +80,6 @@ export default function AugmentedDetail({ onGoToDashboard }) {
               </p>
             </div>
           </div>
-
         </div>
       </div>
 
